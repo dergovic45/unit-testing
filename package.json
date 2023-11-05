@@ -1,27 +1,25 @@
 {
-  "name": "utt-jasmine",
+  "name": "unit-testing-examples",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine",
+    "test": "npx jest",
     "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.4",
+    "jsonwebtoken": "^9.0.2"
+  },
   "devDependencies": {
-    "@types/jasmine": "^4.3.5",
-    "jasmine": "^5.1.0",
-    "jasmine-core": "^5.1.1",
-    "jsonwebtoken": "^8.5.1",
-    "karma": "^6.4.2",
-    "karma-chrome-launcher": "^3.2.0",
-    "karma-coverage": "^2.2.1",
-    "karma-jasmine": "^5.1.0",
-    "karma-jasmine-html-reporter": "^2.1.0",
-    "karma-typescript": "^5.5.4",
+    "@types/jest": "^29.5.7",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "3.0.2",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   }
 }

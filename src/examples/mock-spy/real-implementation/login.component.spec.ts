@@ -19,12 +19,12 @@ describe("Login Component - REAL Authentication Service", () => {
 
     const result = component.isUserLoggedIn();
 
-    expect(result).toBeTrue();
+    expect(result).toBe(true);
   });
 
   it("should return false when the user has been authenticated", () => {
     const result = component.isUserLoggedIn();
 
-    expect(result).toBeFalse();
+    expect(result).toBe(false);
   });
 });
