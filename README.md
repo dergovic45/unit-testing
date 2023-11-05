@@ -60,6 +60,11 @@ TBD
         - `npm run build`
         - `npm test`
     - Ideally the build command will be successful (to see if code compiles) and the test command will print you useful information
+- Jest allows you to filter for tests to run with -t command
+    - For example execute `npx jest -t "Async promises"`
+    - To be even more specific and target a single test `npx jest -t "Calculator should add two numbers"`
+- Additionally you can run tests in watch mode to see modifications in console as you change files
+    - `npx jest --watch`
 - If you are curious about the code itself you can explore it with an IDE
     - For example VSCode can be used → https://code.visualstudio.com/
     - After installing it you can open the project with File → Open Folder
