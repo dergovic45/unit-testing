@@ -4,6 +4,8 @@ This project is here to demonstrate examples for unit tests.
 
 # Changelog
 
+- 06.11.2023 → Added jest extended to have better matchers for checking if call was done once with specific arguments and to check order of calls
+    - https://jest-extended.jestcommunity.dev/docs/getting-started/install
 - 05.11.2023 → Added readme file and changed testing framework to jest, see
     - https://dev.to/this-is-angular/migrate-from-jasmine-to-jest-and-testing-in-angular-286i
     - https://jestjs.io/docs/getting-started
@@ -65,6 +67,8 @@ TBD
     - To be even more specific and target a single test `npx jest -t "Calculator should add two numbers"`
 - Additionally you can run tests in watch mode to see modifications in console as you change files
     - `npx jest --watch`
+- For checking code coverage simply execute the following, also a "coverage" folder will be created in the project root folder
+    - `npx jest --coverage`
 - If you are curious about the code itself you can explore it with an IDE
     - For example VSCode can be used → https://code.visualstudio.com/
     - After installing it you can open the project with File → Open Folder

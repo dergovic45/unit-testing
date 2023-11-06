@@ -3,7 +3,7 @@ import { HttpClient } from './http-client';
 import { Router, RouterEvent } from './router';
 import { SampleSubscriber } from './sample-subscriber';
 
-describe('Sample subscriber', () => {
+describe('SampleSubscriber', () => {
     const eventsSubject$ = new Subject<RouterEvent>();
     let http: HttpClient;
     let service: SampleSubscriber;
@@ -33,9 +33,8 @@ describe('Sample subscriber', () => {
 
         eventsSubject$.next({ url: '/main' } as RouterEvent);
 
-        expect(service.copyright$.next).toHaveBeenCalledWith('test copyright');
-        expect(getFnSpy).toHaveBeenCalledTimes(1);
-        expect(getFnSpy).toHaveBeenCalledWith(expect.anything(), true)
+        expect(service.copyright$.next).toHaveBeenCalledExactlyOnceWith('test copyright');
+        expect(getFnSpy).toHaveBeenCalledExactlyOnceWith(expect.anything(), true)
         // sometimes passed arguments are complicated and you want to still check them, be creative
         const usedUrl = getFnSpy.mock.lastCall?.[0] as URL;
         expect(usedUrl.origin).toEqual('https://secure-backend-server:7661');
@@ -51,9 +50,8 @@ describe('Sample subscriber', () => {
 
         eventsSubject$.next({ url: '/main', state: { useProxy: 1 } });
 
-        expect(service.copyright$.next).toHaveBeenCalledWith('some other value');
-        expect(getFnSpy).toHaveBeenCalledTimes(1);
-        expect(getFnSpy).toHaveBeenCalledWith(expect.anything(), true)
+        expect(service.copyright$.next).toHaveBeenCalledExactlyOnceWith('some other value');
+        expect(getFnSpy).toHaveBeenCalledExactlyOnceWith(expect.anything(), true)
         // sometimes passed arguments are complicated and you want to still check them, be creative
         expect((getFnSpy.mock.lastCall?.[0] as URL).searchParams.get('proxy')).toEqual("true");
     });

@@ -23,7 +23,7 @@ describe("Login Component - FAKE Authentication Service - extend real implementa
 
     const result = component.isUserLoggedIn();
 
-    expect(result).toBe(true);
+    expect(result).toBeTrue();
   });
 
   it("should return false when the user has been authenticated", () => {
@@ -31,6 +31,6 @@ describe("Login Component - FAKE Authentication Service - extend real implementa
 
     const result = component.isUserLoggedIn();
 
-    expect(result).toBe(false);
+    expect(result).toBeFalse();
   });
 });

@@ -15,8 +15,8 @@ describe("Login Component - REAL Authentication Service - SPY", () => {
 
     const result = component.isUserLoggedIn();
 
-    expect(result).toBe(true);
-    expect(service.isUserLoggedIn).toHaveBeenCalled();
+    expect(result).toBeTrue();
+    expect(service.isUserLoggedIn).toHaveBeenCalledTimes(1);
   });
 
   it("should return false when the user has been authenticated", () => {
@@ -24,7 +24,7 @@ describe("Login Component - REAL Authentication Service - SPY", () => {
 
     const result = component.isUserLoggedIn();
 
-    expect(result).toBe(false);
-    expect(service.isUserLoggedIn).toHaveBeenCalled();
+    expect(result).toBeFalse();
+    expect(service.isUserLoggedIn).toHaveBeenCalledTimes(1);
   });
 });
